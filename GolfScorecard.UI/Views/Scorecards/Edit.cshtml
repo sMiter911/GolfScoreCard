@@ -1,0 +1,54 @@
+﻿@model Golfscorecard.DAL.Entities.Scorecard
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Scorecard</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ScorecardId" />
+            <div class="form-group">
+                <label asp-for="HoleNumber" class="control-label"></label>
+                <input asp-for="HoleNumber" class="form-control" />
+                <span asp-validation-for="HoleNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlayerOne" class="control-label"></label>
+                <input asp-for="PlayerOne" class="form-control" />
+                <span asp-validation-for="PlayerOne" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlayerTwo" class="control-label"></label>
+                <input asp-for="PlayerTwo" class="form-control" />
+                <span asp-validation-for="PlayerTwo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlayerThree" class="control-label"></label>
+                <input asp-for="PlayerThree" class="form-control" />
+                <span asp-validation-for="PlayerThree" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlayerFour" class="control-label"></label>
+                <input asp-for="PlayerFour" class="form-control" />
+                <span asp-validation-for="PlayerFour" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
